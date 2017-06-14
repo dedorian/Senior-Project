@@ -1,0 +1,92 @@
+<fieldset>
+    <legend>Send Us a Message</legend>
+    <div class="row">
+        <div class="col-md-8 col-sm-8">
+            <%= form_for(message) do |f| %>
+            <% if message.errors.any? %>
+            <div id="error_explanation">
+                <h2><%= pluralize(message.errors.count, "error") %>
+                    prohibited this message from being saved:</h2>
+
+                <ul>
+                    <% message.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+            <% end %>
+            <div class="field">
+                <% if user_signed_in? %>
+                <div class="col-md-2 col-sm-2 text-right">
+                    <%= f.label :name %>
+                </div>
+                <div class="col-md-10 col-sm-10">
+                    <%= f.text_field :name, value: "#{current_user.first_name} #{current_user.last_name}", placeholder: "John Doe" %>
+                </div>
+            <% else %>
+                <div class="col-md-2 col-sm-2 text-right">
+                    <%= f.label :name %>
+                </div>
+                <div class="col-md-10 col-sm-10">
+                    <%= f.text_field :name, placeholder: "John Doe" %>
+                </div>
+                <% end %>
+            </div>
+
+            <div class="field">
+                <% if user_signed_in? %>
+                <div class="col-md-2 col-sm-2 text-right">
+                    <%= f.label :email %>
+                </div>
+                <div class="col-md-10 col-sm-10">
+                    <%= f.text_field :email, value: "#{current_user.email}", placeholder: "example@email.com" %>
+                </div>
+            <% else %>
+                <div class="col-md-2 col-sm-2 text-right">
+                    <%= f.label :email %>
+                </div>
+                <div class="col-md-10 col-sm-10">
+                    <%= f.text_field :email, placeholder: "example@email.com" %>
+                </div>
+                <% end %>
+            </div>
+
+            <div class="field">
+                <div class="col-md-2 col-sm-2 text-right">
+                    <%= f.label :subject %>
+                </div>
+                <div class="col-md-10 col-sm-10">
+                    <%= f.text_field :subject %>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="col-md-2 col-sm-2 text-right">
+                    <%= f.label :message %>
+                </div>
+                <div class="col-md-10 col-sm-10">
+                    <%= f.text_area :message, cols: "50", rows: "5" %>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-2"></div>
+            <div class="actions col-md-10 col-sm-10">
+                <%= f.submit "Send", class: "btn btn-default" %>
+            </div>
+            <% end %>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <address>
+                <strong>Williams Specialty Company</strong><br>
+                1234 Example Avenue, Suite 404<br>
+                Citytown, OH 43000<br>
+                <abbr title='Phone Number'>P:</abbr>
+                (123) 456-7890
+            </address>
+
+            <address>
+                <a href='mailto:#'>email.address@example.com</a>
+            </address>
+        </div>
+    </div>
+</fieldset><br><br>
