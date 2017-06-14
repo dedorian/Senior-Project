@@ -3,12 +3,10 @@ class RegistrationsController < Devise::RegistrationsController
 
     def edit
         user = User.find(params[:id])
-        @profile = user.profile
     end
 
     def update
         user = User.find(params[:id])
-        user.update(user_params)
     end
 
 end
