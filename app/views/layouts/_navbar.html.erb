@@ -52,7 +52,7 @@
                     </ul>
                 </li>
                 <% end %>
-                <li><%= button_to "Account", edit_user_path(current_user), style: "margin-top:13px; margin-right:5px;"%></li>
+                <li><%= button_to "Account", registration_path(current_user), style: "margin-top:13px; margin-right:5px;"%></li>
                 <li><%= button_to "Logout", destroy_user_session_path, :method => :delete, style: "margin-top:13px; margin-right:5px;" %></li>
             <% else %>
                 <li><%= button_to "Register", new_user_registration_path, :method => :get, style: "margin-top:13px; margin-right:5px;"%></li>
