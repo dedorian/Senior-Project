@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :products
 
   get "users/register", as: 'signup'
-
+  get "users/edit", as 'edit_account'
   get "support/index", as: 'support'
   root 'index#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

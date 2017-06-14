@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Orders</h1>
 
 <table class="table">
@@ -19,7 +17,6 @@
     </tr>
   </thead>
 
-<% if current_user.admin? %>
   <tbody>
     <% @orders.each do |order| %>
       <tr>
@@ -39,26 +36,6 @@
       </tr>
     <% end %>
   </tbody>
-  <% else %>
-  <tbody>
-    <% @orders.each do |order| %>
-      <tr>
-        <td><%= order.subtotal %></td>
-        <td><%= order.tax %></td>
-        <td><%= order.shipping %></td>
-        <td><%= order.total %></td>
-        <td><%= order.order_status %></td>
-        <td><%= order.name %></td>
-        <td><%= order.color %></td>
-        <td><%= order.size %></td>
-        <td><%= order.user %></td>
-        <td><%= order.inscription %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-
 </table>
 
 <br>
