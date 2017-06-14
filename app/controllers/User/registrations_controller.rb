@@ -18,6 +18,16 @@ class User::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+  def edit
+      user = User.find(params[:id])
+      @profile = user.profile
+  end
+
+  def update
+    user = User.find(params[:id])
+    user.update(user_params)
+  end
+  
   # PUT /resource
   # def update
   #   super
