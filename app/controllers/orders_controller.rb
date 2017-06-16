@@ -37,7 +37,6 @@ class OrdersController < ApplicationController
             format.json { render json: @order.errors, status: :unprocessable_entity }
         end
     end
-  end
 
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
