@@ -5,7 +5,7 @@ class User < ApplicationRecord
     devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
     validate :validate_card, :on => :create
-    attr_accessor :card_number, :card_verification
+    attr_accessor :card_number, :card_verification, :card_type
 
 private
 
