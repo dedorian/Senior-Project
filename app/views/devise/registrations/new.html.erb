@@ -129,7 +129,7 @@
             <%= f.label :card_expires_on %>
         </div>
         <div class='col-md-8 col-sm-8'>
-            <%= f.date_select :card_expires_on, :discard_day => true, :start_year => Date.today.year, :end_year => (Date/today.year+20), :add_month_numbers => true %>
+            <%= f.date_select :card_expires_on, :discard_day => true, :start_year => Time.current.year, :end_year => (Time.current.year+20), :add_month_numbers => true %>
         </div>
     </div>
 
