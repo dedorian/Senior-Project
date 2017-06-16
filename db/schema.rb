@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170611232744) do
+ActiveRecord::Schema.define(version: 20170616173436) do
 
   create_table "messages", force: :cascade do |t|
     t.string   "name"
@@ -66,6 +66,11 @@ ActiveRecord::Schema.define(version: 20170611232744) do
     t.integer  "zip"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
+    t.string   "ip_address"
+    t.string   "card_type"
+    t.date     "card_expires_on"
+    t.string   "card_number"
+    t.string   "card_verification"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

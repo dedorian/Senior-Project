@@ -1,6 +1,35 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
 <fieldset>
+    <legend>Username/Password:</legend>
+    <div class="field">
+        <div class='col-md-4 col-sm-4 text-right'>
+            <%= f.label :email, "Email" %>
+        </div>
+        <div class='col-md-8 col-sm-8'>
+            <%= f.email_field :email, placeholder: "example@email.com" %>
+        </div>
+    </div>
+    <div class="field">
+        <div class='col-md-4 col-sm-4 text-right'>
+            <%= f.label :password %>
+        </div>
+        <div class='col-md-8 col-sm-8'>
+            <%= f.password_field :password, autocomplete: "off", placeholder: "#{@minimum_password_length} characters minimum"  %>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class='col-md-4 col-sm-4 text-right'>
+            <%= f.label :password_confirmation %>
+        </div>
+        <div class='col-md-8 col-sm-8'>
+            <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "******" %>
+        </div>
+    </div>
+</fieldset>
+
+<fieldset>
     <legend>Personal Information:</legend>
 
     <div class="field">
@@ -68,33 +97,42 @@
 </fieldset>
 
 <fieldset>
-    <legend>Username/Password:</legend>
+    <legend>Payment Information:</legend>
 
     <div class="field">
         <div class='col-md-4 col-sm-4 text-right'>
-            <%= f.label :email, "Email" %>
+            <%= f.label :card_type %>
         </div>
         <div class='col-md-8 col-sm-8'>
-            <%= f.email_field :email, placeholder: "example@email.com" %>
+            <%= f.select :card_type, [["Visa", "visa"], ["MasterCard","master"], ["Discover","discover"], ["American Express","american_express"]] %>
         </div>
     </div>
     <div class="field">
         <div class='col-md-4 col-sm-4 text-right'>
-            <%= f.label :password %>
+            <%= f.label :card_number %>
         </div>
         <div class='col-md-8 col-sm-8'>
-            <%= f.password_field :password, autocomplete: "off", placeholder: "#{@minimum_password_length} characters minimum"  %>
+            <%= f.text_field :card_number %>
+        </div>
+    </div>
+    <div class="field">
+        <div class='col-md-4 col-sm-4 text-right'>
+            <%= f.label :card_verification %>
+        </div>
+        <div class='col-md-8 col-sm-8'>
+            <%= f.text_field :card_verification %>
         </div>
     </div>
 
     <div class="field">
         <div class='col-md-4 col-sm-4 text-right'>
-            <%= f.label :password_confirmation %>
+            <%= f.label :card_expires_on %>
         </div>
         <div class='col-md-8 col-sm-8'>
-            <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "******" %>
+            <%= f.date_select :card_expires_on, :discard_day => true, :start_year => Date.today.year, :end_year => (Date/today.year+20), :add_month_numbers => true %>
         </div>
     </div>
+
 <div class="col-md-4 col-sm-4"></div>
     <div class="actions col-md-8 col-sm-8">
         <br>
@@ -102,4 +140,5 @@
         <%= link_to "Cancel", products_path, class:'btn btn-default' %>
     </div>
 </fieldset>
+
 <% end %>

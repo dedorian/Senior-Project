@@ -10,6 +10,12 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
+  # Active Merchange Dummy Config
+  config.after_initialize do
+      ActiveMerchant::Billing::Base.mode = :test
+      ::GATEWAY = ActiveMerchant::Billing::BogusGateway.new
+  end
+
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
