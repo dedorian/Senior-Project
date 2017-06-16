@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users, only: [:show, :edit, :update]
+  resources :users
   resources :orders
   resources :messages
   resources :products
-
-#  as :user do
-#    get "edit_account", to: "devise/registrations#edit"
-#  end
 
   get "support/index", as: 'support'
   root 'index#index'
