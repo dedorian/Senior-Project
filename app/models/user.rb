@@ -11,11 +11,11 @@ class User < ApplicationRecord
     validates :last_name, presence: true
     validates :street, presence: true
     validates :city, presence: true
-    validates :state, presence: true, length: { is: 2 }
+    validates :state, presence: true, numericality: true, length: { is: 2 }
     validates :zip, presence: true
 
     validates :card_number, presence: true, numericality: true, length: { is: 16 }
-    validates :card_verification, presence: true, numericality: true
+    validates :card_verification, presence: true, numericality: true, length: { in: 3..4 }
 
     attr_accessor :card_number, :card_verification, :card_type, :card_expires_on
 
