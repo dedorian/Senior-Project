@@ -26,7 +26,6 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
-    @order.product_id = params[:order][:product_id]
     @order.ip_address = request.remote_ip
     @order.save
         if @order.save
