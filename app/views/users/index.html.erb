@@ -30,8 +30,8 @@
         <td><%= user.card_type %></td>
         <td><%= (user.card_number.to_s)[-4,-1] %></td>
         <td><%= user.card_expires_on %></td>
-        <td><%= link_to 'Show', message %></td>
-        <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
