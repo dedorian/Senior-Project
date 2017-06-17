@@ -1,0 +1,38 @@
+<h1>Users</h1>
+
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>User:</th>
+      <th>First Name:</th>
+      <th>Last Name:</th>
+      <th>Street:</th>
+      <th>City:</th>
+      <th>State:</th>
+      <th>Zip:</th>
+      <th>Card Type:</th>
+      <th>Last 4 of Card:</th>
+      <th>Expires:</th>
+      <th colspan="2">SUB</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.street %></td>
+        <td><%= user.city %></td>
+        <td><%= user.state %></td>
+        <td><%= user.zip %></td>
+        <td><%= user.card_type %></td>
+        <td><%= (user.card_number.to_s)[-4,-1] %></td>
+        <td><%= user.card_expires_on %></td>
+        <td><%= link_to 'Show', message %></td>
+        <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
