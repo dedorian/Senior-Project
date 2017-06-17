@@ -13,7 +13,7 @@
         <p>
             <%= f.label :name %>: <%= @product.name %>
             <%= f.hidden_field :name, value: "#{@product.name}" %>
-            <%= f.hidden_field :user, value: "#{user.username}" %>
+            <%= f.hidden_field :user, value: "#{current_user}" %>
 
         </P>
         <p>
