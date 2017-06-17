@@ -39,7 +39,7 @@
                 <% end %>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUserMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <%= truncate(current_user.email), length: 25, omission: '...' %>
+                        <%= current_user.email %>
                     </a>
                     <ul class="dropdown-menu">
                         <li><%= button_to "Edit Account", edit_user_registration_path, :method => :get, style: "margin-top:13px; margin-right:5px;"%></li>
