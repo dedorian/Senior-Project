@@ -12,38 +12,23 @@
                 <%= link_to 'WSC', root_path %>
             </div>
         </div>
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div id='bs-docs-example-navbar-collapse-1'>
             <ul class='nav navbar-nav'>
-
                 <!-- Catalog -->
-                <li>
-                    <%= link_to 'Catalog', products_path %>
-                </li>
-
+                <li><%= link_to 'Catalog', products_path %></li>
                 <!-- Order -->
-                <li>
-                    <%= link_to 'Order', orders_path %>
-                </li>
-
+                <li><%= link_to 'Order', orders_path %></li>
                 <!-- Contact Us -->
-                <li>
-                    <%= link_to 'Contact Us', new_message_path %>
-                </li>
-
+                <li><%= link_to 'Contact Us', new_message_path %></li>
                 <!-- Customer Support -->
-                <li>
-                    <%= link_to 'Customer Support', support_path %>
-                </li>
-
+                <li><%= link_to 'Customer Support', support_path %></li>
             </ul>
-
             <ul class='nav navbar-nav navbar-right'>
                 <% if user_signed_in? %>
                 <% if current_user.admin? %>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAdminMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Admin Controlls
                     </a>
                     <ul class="dropdown-menu">
@@ -52,8 +37,15 @@
                     </ul>
                 </li>
                 <% end %>
-                <li><%= button_to "Account", edit_user_registration_path, :method => :get, style: "margin-top:13px; margin-right:5px;"%></li>
-                <li><%= button_to "Logout", destroy_user_session_path, :method => :delete, style: "margin-top:13px; margin-right:5px;" %></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUserMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <%= truncate(current_user.email), length: 25, omission: '...' %>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><%= button_to "Edit Account", edit_user_registration_path, :method => :get, style: "margin-top:13px; margin-right:5px;"%></li>
+                        <li><%= button_to "Logout", destroy_user_session_path, :method => :delete, style: "margin-top:13px; margin-right:5px;" %></li>
+                    </ul>
+                </li>
             <% else %>
                 <li><%= button_to "Register", new_user_registration_path, :method => :get, style: "margin-top:13px; margin-right:5px;"%></li>
                 <li><%= button_to "Login", new_user_session_path, :method => :get, style: "margin-top:13px; margin-right:5px;"%></li>

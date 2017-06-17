@@ -1,33 +1,11 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Subtotal:</strong>
-  <%= @order.subtotal %>
-</p>
-
-<p>
-  <strong>Tax:</strong>
-  <%= @order.tax %>
-</p>
-
-<p>
-  <strong>Shipping:</strong>
-  <%= @order.shipping %>
+  <strong>Name:</strong>
+  <%= @order.name %>
 </p>
 
 <p>
   <strong>Total:</strong>
   <%= @order.total %>
-</p>
-
-<p>
-  <strong>Order status:</strong>
-  <%= @order.order_status %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @order.name %>
 </p>
 
 <p>
@@ -41,14 +19,10 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @order.user %>
-</p>
-
-<p>
   <strong>Inscription:</strong>
   <%= @order.inscription %>
 </p>
+
 <% if current_user.admin? %>
     <%= link_to 'Edit', edit_order_path(@order) %> |
     <%= link_to 'Back', orders_path %>

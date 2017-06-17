@@ -3,11 +3,7 @@
 <table class="table">
   <thead class="thead-inverse">
     <tr>
-      <th>Subtotal</th>
-      <th>Tax</th>
-      <th>Shipping</th>
       <th>Total</th>
-      <th>Order status</th>
       <th>Name</th>
       <th>Color</th>
       <th>Size</th>
@@ -20,11 +16,7 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.subtotal %></td>
-        <td><%= order.tax %></td>
-        <td><%= order.shipping %></td>
         <td><%= order.total %></td>
-        <td><%= order.order_status %></td>
         <td><%= order.name %></td>
         <td><%= order.color %></td>
         <td><%= order.size %></td>
