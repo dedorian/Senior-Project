@@ -82,7 +82,7 @@
             <%= f.label :state %>
         </div>
         <div class='col-md-8 col-sm-8'>
-            <%= f.text_field :state, placeholder: "EX" %>
+            <%= select_tag :state, options_for_select(us_states) %>
         </div>
     </div>
 
