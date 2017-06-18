@@ -4,13 +4,13 @@ class OrdersController < ApplicationController
 
   # GET /orders
   # GET /orders.json
-  def index
-    @orders = Order.all
-  end
-
-  def customer_orders
-    @orders = @current_user.orders
-  end
+    def index
+        if current_user.admin?
+            @orders = Order.all
+        else
+            @orders = @current_user.orders
+        end
+    end
 
   # GET /orders/1
   # GET /orders/1.json
