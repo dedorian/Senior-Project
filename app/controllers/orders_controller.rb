@@ -9,8 +9,9 @@ class OrdersController < ApplicationController
   end
 
   def customer_orders
-    @orders = @current_user.orders
+    @orders = Order.where(:user_id => current_user.id)
   end
+
   # GET /orders/1
   # GET /orders/1.json
   def show
