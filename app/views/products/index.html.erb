@@ -27,7 +27,7 @@
                     <br>
                     <% if user_signed_in? %>
                     <% if current_user.admin? %>
-                    <%= link_to ("button class='btn btn-warning'>Edit this Product.</button>").html_safe, controller: "products", action: "edit", id: product.id %>
+                    <%= link_to ("<button class='btn btn-warning'>Edit this Product.</button>").html_safe, controller: "products", action: "edit", id: product.id %>
                     <% end %>
                     <% end %>
                     <%= link_to ("<button class='btn btn-info'>Customize this product!</button>").html_safe, controller: "products", action: "show", id: product.id %>
