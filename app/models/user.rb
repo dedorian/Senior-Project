@@ -14,9 +14,6 @@ class User < ApplicationRecord
     validates :state, presence: true
     validates :zip, presence: true
 
-    validates :card_number, presence: true
-    validates :card_verification, presence: true
-
     attr_accessor :card_number, :card_verification, :card_type, :card_expires_on
 
 end
