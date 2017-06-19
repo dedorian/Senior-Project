@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token
-
+  before_filter :authenticate_user!
   # GET /orders
   # GET /orders.json
     def index
