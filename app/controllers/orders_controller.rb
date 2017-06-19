@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
         if current_user.admin?
             @orders = Order.all
         else
-            @orders = @current_user.orders
+            @orders = (@current_user.email).orders
         end
     end
 
