@@ -10,9 +10,6 @@
       <th>City:</th>
       <th>State:</th>
       <th>Zip:</th>
-      <th>Card Type:</th>
-      <th>Last 4 of Card:</th>
-      <th>Expires:</th>
       <th colspan="2">SUB</th>
     </tr>
   </thead>
@@ -27,9 +24,6 @@
         <td><%= user.city %></td>
         <td><%= user.state %></td>
         <td><%= user.zip %></td>
-        <td><%= user.card_type %></td>
-        <td><%= (user.card_number.to_s)[-4,-1] %></td>
-        <td><%= user.card_expires_on %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
