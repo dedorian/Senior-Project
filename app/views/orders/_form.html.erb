@@ -13,18 +13,8 @@
 
   <% if current_user.admin? %>
   <div class="field">
-    <%= f.label :subtotal %>
-    <%= f.text_field :subtotal %>
-  </div>
-
-  <div class="field">
-    <%= f.label :tax %>
-    <%= f.text_field :tax %>
-  </div>
-
-  <div class="field">
-    <%= f.label :shipping %>
-    <%= f.text_field :shipping %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
   </div>
 
   <div class="field">
@@ -33,14 +23,11 @@
   </div>
 
   <div class="field">
-    <%= f.label :order_status %>
-    <%= f.number_field :order_status %>
-  </div>
-
-  <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
+  <% end %>
+
 
   <div class="field">
     <%= f.label :color %>
@@ -50,11 +37,6 @@
   <div class="field">
     <%= f.label :size %>
     <%= f.text_field :size %>
-  </div>
-
-  <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
   </div>
 
   <div class="field">
