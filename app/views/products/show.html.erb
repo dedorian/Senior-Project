@@ -13,7 +13,9 @@
         <p>
             <%= f.label :name %>: <%= @product.name %>
             <%= f.hidden_field :name, value: "#{@product.name}" %>
+            <% if user_signed_in? %>
             <%= f.hidden_field :username, value: current_user.email %>
+            <% end %>
 
         </P>
         <p>
