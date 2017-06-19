@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+  <% if current_user.admin? %>
   <div class="field">
     <%= f.label :subtotal %>
     <%= f.text_field :subtotal %>
