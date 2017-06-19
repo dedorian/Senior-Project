@@ -13,35 +13,35 @@
 
   <% if current_user.admin? %>
   <div class="field">
-    <%= f.label :username %>
+    <%= f.label :username %><br>
     <%= f.text_field :username %>
   </div>
 
   <div class="field">
-    <%= f.label :total %>
-    <%= f.text_field :total %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.label :total %><br>
+    <%= f.text_field :total %>
   </div>
   <% end %>
 
 
   <div class="field">
-    <%= f.label :color %>
-    <%= f.text_field :color %>
+    <%= f.label :color %><br>
+    <%= f.select :color, ['Red','Orange','Yellow','Green','Blue','Purple','Brown','White','Black'] %>
   </div>
 
   <div class="field">
-    <%= f.label :size %>
-    <%= f.text_field :size %>
+    <%= f.label :size %><br>
+    <%= f.select :size, ['XS','S','M','L','XL','2X','3X','4X'] %>
   </div>
 
   <div class="field">
-    <%= f.label :inscription %>
-    <%= f.text_area :inscription %>
+    <%= f.label :inscription %><br>
+    <%= f.text_area :inscription, size: "50x5" %>
   </div>
 
   <div class="actions">
