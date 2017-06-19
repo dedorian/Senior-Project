@@ -39,7 +39,7 @@
         </div>
         <div class="row text-center">
             <% if user_signed_in? %>
-            <%= f.submit "Add this item to your order.", data: { confirm: "Order a custom #{@product.name} for #{@product.price}?" } %>
+            <%= f.submit "Add this item to your order.", data: { confirm: "Order a custom #{@product.name} for $#{@product.price}?" } %>
             <% end %>
         </div>
     </div>
