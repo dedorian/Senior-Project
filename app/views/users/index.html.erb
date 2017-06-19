@@ -10,7 +10,6 @@
       <th>City:</th>
       <th>State:</th>
       <th>Zip:</th>
-      <th colspan="2">SUB</th>
     </tr>
   </thead>
 
@@ -23,9 +22,7 @@
         <td><%= user.street %></td>
         <td><%= user.city %></td>
         <td><%= user.state %></td>
-        <td><%= user.zip %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= user.zip %></td>W
       </tr>
     <% end %>
   </tbody>
