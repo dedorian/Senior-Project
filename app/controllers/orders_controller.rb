@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
             if current_user.admin?
                 @orders = Order.all
             end
-            @orders = Order.where(:username => 'patrick.j.king@gmail.com')
+            @orders = Order.where(:username => current_user.email)
         else
             redirect_to root_path, notice: 'You have to be logged in to view your orders!'
         end
