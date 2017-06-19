@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
             if current_user.admin?
                 @orders = Order.all
             end
-            @orders = Order.where(@order.user => current_user.email)
+            @orders = Order.where(:username => 'patrick.j.king@gmail.com')
         else
             redirect_to root_path, notice: 'You have to be logged in to view your orders!'
         end
@@ -68,12 +68,12 @@ class OrdersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    #def set_order
-    #  @order = Order.find(params[:id])
-    #end
+    # def set_order
+    #   @order = Order.find(params[:id])
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:subtotal, :tax, :shipping, :total, :order_status, :name, :color, :size, :user, :inscription)
+      params.require(:order).permit(:subtotal, :tax, :shipping, :total, :order_status, :name, :color, :size, :username, :inscription)
     end
 end
