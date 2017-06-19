@@ -5,10 +5,14 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
     def index
-        if current_user.admin?
-            @orders = Order.all
+        if user_signed_in?
+            if current_user.admin?
+                @orders = Order.all
+            end
+
+            @orders = Order.find(:all, :conditions => {:user => current_user.email})
         else
-            @orders = (@current_user.email).orders
+            format.html { redirect_to root_path, notice: 'You have to be logged in to view your orders!' }
         end
     end
 
